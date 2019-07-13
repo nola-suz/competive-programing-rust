@@ -9,18 +9,18 @@ edition = "2018"
 
 [[bin]]
 name = "main_a"
-path = "src/atcoder/ABC059/A.rs"
+path = "src/atcoder/ABC060/A.rs"
 
 [[bin]]
 name = "main_b"
-path = "src/atcoder/ABC059/B.rs"
+path = "src/atcoder/ABC060/B.rs"
 
 [[bin]]
 name = "main_c"
-path = "src/atcoder/ABC059/C.rs"
+path = "src/atcoder/ABC060/C.rs"
 
 [[bin]]
 name = "main_d"
-path = "src/atcoder/ABC059/D.rs"
+path = "src/atcoder/ABC060/D.rs"
 
 

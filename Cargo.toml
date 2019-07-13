@@ -1,0 +1,26 @@
+[package]
+name = "competive-programing-rust"
+version = "0.1.0"
+authors = ["nola_suz"]
+edition = "2018"
+
+[dependencies]
+
+
+[[bin]]
+name = "main_a"
+path = "src/atcoder/ABC059/A.rs"
+
+[[bin]]
+name = "main_b"
+path = "src/atcoder/ABC059/B.rs"
+
+[[bin]]
+name = "main_c"
+path = "src/atcoder/ABC059/C.rs"
+
+[[bin]]
+name = "main_d"
+path = "src/atcoder/ABC059/D.rs"
+
+

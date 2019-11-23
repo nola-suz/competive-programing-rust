@@ -35,26 +35,26 @@ int main() {
         }
     }
 
-    ll mod = 10000000000000;
+    for (int k=0; k<N; k++) {
+        for (int i=0; i<N; i++) {
+            for (int j=0; j<N; j++) {
+                dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j]);
+            }
+        }
+    }
+
+    vector<vector<ll>> dist2(N, vector<ll>(N, INFL));
+
+    for(int i=0; i<N; i++) {
+        for(int j=0; j<N; j++) {
+            dist2[i][j] = (dist[i][j] <= L ? 1 : INFL);
+        }
+    }
 
     for (int k=0; k<N; k++) {
         for (int i=0; i<N; i++) {
             for (int j=0; j<N; j++) {
-                if (edge[k][j] == INFL) continue;
-                if (dist[i][k] == INFL) continue;
-                ll cnt = dist[i][k] / mod;
-                ll g = L - (dist[i][k] % mod);
-                if (g >= edge[k][j]) {
-                    g -= edge[k][j];
-                }
-                else {
-                    cnt++;
-                    g = L - edge[k][j];
-                }
-                if (i == 3 && k == 2 && j == 1) {
-                    cout << cnt << " " << g << endl;
-                }
-                dist[i][j] = min(dist[i][j], cnt * mod + L - g);
+                dist2[i][j] = min(dist2[i][j], dist2[i][k] + dist2[k][j]);
             }
         }
     }
@@ -65,6 +65,6 @@ int main() {
         int s, t;
         cin >> s >> t;
         s--, t--;
-        cout << (dist[s][t] == INFL ? -1 : dist[s][t] / mod) << endl;
+        cout << (dist2[s][t] >= INFL ? -1 : dist2[s][t] - 1) << endl;
     }
 }
